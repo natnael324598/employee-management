@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Employee Management System</h1>
+
+    <section>
+      <h2>Add Employee</h2>
+      <form id="employeeForm">
+        <select id="type">
+          <option value="full">Full-Time</option>
+          <option value="part">Part-Time</option>
+        </select>
+        <input type="text" id="id" placeholder="ID" required />
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="text" id="department" placeholder="Department" required />
+        <input type="number" id="salary" placeholder="Salary" required />
+        <input type="text" id="contact" placeholder="Contact" />
+        <input type="email" id="email" placeholder="Email" />
+        <input type="text" id="address" placeholder="Address" />
+        <button type="submit">Add Employee</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Employees</h2>
+      <div id="employeeList"></div>
+    </section>
+
+    <section id="taskSection" class="hidden">
+      <h2>Assign Task to <span id="taskEmpName"></span></h2>
+      <form id="taskForm">
+        <input type="text" id="taskId" placeholder="Task ID" required />
+        <input type="text" id="description" placeholder="Description" required />
+        <input type="date" id="deadline" required />
+        <button type="submit">Assign Task</button>
+      </form>
+      <div id="taskList"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

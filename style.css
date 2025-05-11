@@ -8,18 +8,20 @@ body {
 .container {
   width: 90%;
   max-width: 900px;
-  margin: auto;
+  margin: 30px auto;
   padding: 20px;
   background: white;
   border-radius: 8px;
-  margin-top: 30px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
 h1, h2 {
   text-align: center;
+  margin-top: 0;
 }
 
+/* Make form inputs and buttons full-width on small screens */
 form {
   display: flex;
   flex-wrap: wrap;
@@ -28,16 +30,21 @@ form {
 }
 
 input, select, button {
-  padding: 8px;
+  padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
+  flex: 1 1 200px;             /* allow inputs to grow and shrink */
+  min-width: 120px;
 }
 
+/* Buttons */
 button {
   background-color: #007bff;
   color: white;
   border: none;
   cursor: pointer;
+  flex: 1 1 100px;
 }
 
 button:hover {
@@ -50,8 +57,36 @@ button:hover {
   padding: 10px;
   border-radius: 6px;
   background-color: #fafafa;
+  box-sizing: border-box;
 }
 
 .hidden {
   display: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  form {
+    flex-direction: column;    /* stack inputs vertically */
+    gap: 8px;
+  }
+
+  input, select, button {
+    width: 100%;               /* full-width controls */
+    min-width: 0;
+  }
+
+  .employee-card {
+    font-size: 0.9rem;         /* slightly smaller text */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
 }
